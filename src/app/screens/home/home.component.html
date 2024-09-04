@@ -1,0 +1,10 @@
+
+<app-hero />
+<section class="px-[12px] py-[48px] max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 py-5 gap-5">
+  @for (card of cards; track card.title) {
+  <app-info-card title={{card.title}} description={{card.description}} icon={{card.icon}} />
+  } @empty {
+  <li></li>
+  }
+</section>
+<app-welcome />

@@ -1,0 +1,7 @@
+.data-card {
+    @apply border-l-4 border-l-orange px-4 py-2;
+} 
+
+.data-card-number {
+    @apply text-orange text-5xl font-extrabold;
+}
