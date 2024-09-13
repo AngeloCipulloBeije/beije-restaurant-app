@@ -1,5 +1,5 @@
 .footer-row {
-    @apply text-2xl text-orange relative inline-block;
+    @apply text-2xl text-orange relative inline-block mb-4;
 
     font-family: "Pacifico", sans-serif;
     font-optical-sizing: auto;
@@ -16,4 +16,26 @@
     top: 50%;
     right: -55px;
     margin-top: -1px;
+}
+
+.footer-row--item {
+    position: relative;
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+    font-weight: bold;
+}
+
+.footer-row--item::before {
+    position: relative;
+    content: ">";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
 }

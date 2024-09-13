@@ -1,5 +1,43 @@
 <div>
-    <h1 class="nuniko text-4xl">Most Popular Items</h1>
-    <div>
+    <div class="text-center">
+        <h2 class="text-orange section-title section-title-left">Food Menu</h2>
+        <h1 class="nunito text-4xl font-extrabold">Most Popular Items</h1>
+    </div>
+    <div class="mt-5 flex items-center justify-center">
+        @for (tab of tabs; track tab.label) {
+        <button (click)="setActiveTab(tab.value)" [ngClass]="{ 'border-b-orange border-b-2': activeTab === tab.value }"
+            class="box-content flex items-center px-4 border-b py-3 border-b-gray-300">
+            <fa-icon [icon]=tab.icon class="text-3xl text-orange mr-2"></fa-icon>
+            <p class="whitespace-nowrap font-extrabold nunito">
+                {{tab.label}}
+            </p>
+        </button>
+        } @empty {
+        <li></li>
+        }
+    </div>
 
+    @if (loading) {
+    <app-spinner />
+    } @else {
+    <div class="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-x-10 gap-y-5">
+        @for (item of menuItems; track item.name) {
+        <article class="flex w-full">
+            <div class="mr-5 flex items-center justify-center">
+                <img class="rounded w-[80px] aspect-square"
+                    src="https://themewagon.github.io/restoran/img/menu-1.jpg" />
+            </div>
+            <div class="w-full py-3">
+                <div class="border-b border-b-gray-300 pb-1 flex justify-between">
+                    <h2 class="nunito font-extrabold text-2xl">{{item.name}}</h2>
+                    <p class="text-orange text-2xl nunito font-extrabold">{{item.price}} €</p>
+                </div>
+                <p class="italic text-gray-500 pt-1">{{ item.topping | joinArray:', ' }}</p>
+            </div>
+        </article>
+        } @empty {
+        <p>No items found on the menu</p>
+        }
+    </div>
+    }
 </div>

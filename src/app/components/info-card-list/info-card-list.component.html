@@ -1,0 +1,7 @@
+<section class="px-[12px] py-[48px] grid grid-cols-1 lg:grid-cols-4 py-5 gap-5">
+    @for (card of data; track card.title) {
+    <app-info-card title={{card.title}} description={{card.description}} icon={{card.icon}} />
+    } @empty {
+    <li></li>
+    }
+  </section>

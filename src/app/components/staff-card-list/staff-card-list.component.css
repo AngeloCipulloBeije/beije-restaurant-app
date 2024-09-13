@@ -1,0 +1,17 @@
+.chef-card:hover img {
+    transform: scale(1.05);
+}
+
+.chef-card:hover {
+    height: 100% !important;
+}
+
+.chef-card {
+    height: calc(100% - 38px);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.social-icon {
+    @apply bg-orange px-3 py-1 rounded-t-full text-white pt-1 pb-2;
+}

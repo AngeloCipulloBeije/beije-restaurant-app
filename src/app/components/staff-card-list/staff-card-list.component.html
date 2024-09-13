@@ -1,0 +1,25 @@
+<div>
+    <div class="text-center mb-5">
+        <h2 class="text-orange section-title section-title-left">Team Members</h2>
+        <h1 class="nunito text-4xl font-extrabold">Our Master Chef</h1>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-5 rounded">
+        @for (chef of cards; track chef.name) {
+        <div class="chef-card bg-white shadow-custom pt-5 px-5">
+            <div class="overflow-hidden rounded-full">
+                <img src={{chef.imgUrl}} class="transition" />
+            </div>
+            <div class="text-center mt-5">
+                <p class="nunito font-extrabold text-xl">{{chef.name}}</p>
+                <p class="text-gray-500  font-semibold">{{chef.role}}</p>
+            </div>
+            <div class="mt-5 flex space-x-4 items-center justify-center">
+                <fa-icon class="social-icon" [icon]="faFacebook"></fa-icon>
+                <fa-icon class="social-icon" [icon]="faInstagram"></fa-icon>
+                <fa-icon class="social-icon" [icon]="faX"></fa-icon>
+            </div>
+        </div>
+        }
+
+    </div>
+</div>

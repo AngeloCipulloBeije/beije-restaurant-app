@@ -1,0 +1,25 @@
+<div class="-mx-5 lg:px-0 grid grid-cols-1 lg:grid-cols-2">
+    <div class="relative overflow-hidden flex items-center justify-center">
+        <div class="relative">
+            <fa-icon [icon]=playIcon class="absolute z-50 bg-orange rounded-full overflow-hidden text-dark-blue flex items-center justify-center w-20 h-20 text-3xl text-orange mr-2"></fa-icon>
+            <fa-icon [icon]=playIcon class="absolute animate-ping z-40 bg-orange rounded-full overflow-hidden text-dark-blue flex items-center justify-center w-20 h-20 text-3xl text-orange mr-2"></fa-icon>
+        </div>
+        
+        <img src="https://themewagon.github.io/restoran/img/video.jpg" class="absolute inset-0 object-cover h-full w-full" />
+    </div>
+    <div class="bg-gray-800 px-10 text-white py-12">
+        <h2 class="section-title">Reservation</h2>
+        <h1 class="nunito font-extrabold text-4xl">Book a Table Online</h1>
+
+        <div class="form-body grid grid-cols-1 lg:grid-cols-2 gap-4 mt-5">
+            <input placeholder="Your Name" type="text" />
+            <input placeholder="Your Email" type="text" />
+            <input placeholder="Date & Time" type="date" />
+            <input placeholder="People" type="number" />
+            <input type="textarea"   class="lg:col-span-2 min-h-[130px]"/>
+            <div class="lg:col-span-2 w-full">
+                <app-button label="BOOK NOW" className="text-xl !w-full p-5"/>
+            </div>
+        </div>
+    </div>
+</div>

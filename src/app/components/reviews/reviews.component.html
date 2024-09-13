@@ -1,0 +1,28 @@
+<section>
+    <div class="text-center mb-5">
+        <h2 class="text-orange section-title section-title-left">Testimonal</h2>
+        <h1 class="nunito text-4xl font-extrabold">Our Clients Say!!</h1>
+    </div>
+    <owl-carousel-o [options]="customOptions">
+        @for (review of reviews; track review.name) {
+        <ng-template carouselSlide>
+            <div class="border p-6">
+                <fa-icon class="text-orange text-5xl mb-4" [icon]="quoteIcon"></fa-icon>
+                <p class="font mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod
+                    eos
+                    labore diam</p>
+                <div class="flex">
+                    <img src={{review.picture}}
+                        class="mr-3 bg-gray-200 rounded-full !w-min h-16 aspect-square" />
+                    <div class="flex-1">
+                        <h2 class="mb-1 nunito text-xl font-extrabold">{{review.name}}</h2>
+                        <p>{{review.jobTitle}}</p>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        } @empty {
+        <li></li>
+        }
+    </owl-carousel-o>
+</section>
