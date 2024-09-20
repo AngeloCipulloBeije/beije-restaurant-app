@@ -1,0 +1,37 @@
+<app-breadcrumb />
+<app-layout>
+    <div class="">
+        <h1 class="text-3xl font-extrabold text-center">Welcome, Admin</h1>
+        <p class="font-bold text-2xl mb-2">Your Bookings:</p>
+        <div class="grid grid-cols-4 gap-5">
+
+            @for (booking of bookings; track booking.id) {
+            <div class="border-dashed h-min border p-5 rounded text-left">
+                @if (booking.id) {
+                    <div class="text-right">
+                        <button (click)="deleteBooking(booking.id)">
+                            <fa-icon [icon]="trashIcon" class="bg-red-500 p-2 rounded text-white" />
+                        </button>
+                    </div>
+                }
+                
+                <p class="font-medium text-2xl">{{booking.name}}</p>
+                <p class="text-xl">{{booking.email}}</p>
+                <div class="flex items-center mt-4">
+                    <fa-icon class="text-orange text-2xl mr-2"  [icon]="peopleIcon" />
+                    <p class="font-bold tex-2xl">{{booking.num_people}} persone</p>
+                </div>
+                <p>{{booking.booking_date | date:'dd/MM/yyyy' }} alle ore {{booking.booking_date | date:'HH:mm' }}</p>
+                @if (booking.notes) {
+                    <p class="mt-5">Note: <span class="italic">{{ booking.notes }}</span></p>
+                }
+
+            </div>
+            } @empty {
+            <p>Nessuna prenotazione trovata.</p>
+            }
+        </div>
+
+
+    </div>
+</app-layout>

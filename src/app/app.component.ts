@@ -18,7 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeroComponent,
     InfoCardComponent,
     WelcomeComponent,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

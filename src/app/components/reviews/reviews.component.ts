@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { Review } from '../../types/types';
+import { ReviewsService } from '../../services/reviews.service';
 
 @Component({
   selector: 'app-reviews',
@@ -43,10 +45,20 @@ export class ReviewsComponent {
     nav: false
   }
 
-  reviews = [
-    { name: "Client Name", jobTitle: "Professor", picture: "https://themewagon.github.io/restoran/img/testimonial-1.jpg" },
-    { name: "Another Client", jobTitle: "Designer",  picture: "https://themewagon.github.io/restoran/img/testimonial-2.jpg" },
-    { name: "Angelo Cipullo", jobTitle: "Developer",  picture: "https://themewagon.github.io/restoran/img/testimonial-3.jpg" },
-    { name: "Jack Black", jobTitle: "Actor",  picture: "https://themewagon.github.io/restoran/img/testimonial-4.jpg"}
-  ]
+  constructor(private reviewService: ReviewsService) {
+  }
+
+  reviews: Review[] = [];
+
+  ngOnInit() {
+    this.fetchBookings();
+  }
+
+  fetchBookings() {
+    this.reviewService.getAllReviews().subscribe((res: any) => {
+      if (res && res.data) {
+        this.reviews = res.data;
+      }
+    })
+  }
 }

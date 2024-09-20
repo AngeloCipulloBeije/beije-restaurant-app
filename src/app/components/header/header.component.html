@@ -2,7 +2,7 @@
   <nav class="max-w-6xl mx-auto justify-center h-full items-center flex">
     <div class="flex flex-1">
       <fa-icon [icon]="foodIcon" class="text-orange text-4xl mr-2" />
-      <h1 class="nunito text-4xl font-bold text-orange">Restaurant</h1>
+      <h1 routerLink="/" class="cursor-pointer nunito text-4xl font-bold text-orange">Restaurant</h1>
     </div>
     <ul class="uppercase font-medium hidden lg:flex text-white space-x-6 items-center">
       @for (route of routes; track route.path) {

@@ -38,7 +38,6 @@ export class TabsMenuComponent {
 
   setActiveTab(tabValue: string): void {
     if (this.activeTab !== tabValue) {
-      // this.activeTab = tabValue;
       this.appService.setTabValue(tabValue)
       this.fetchData(tabValue);
     }

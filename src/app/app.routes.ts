@@ -5,6 +5,7 @@ import { NotFoundComponent } from './screens/not-found/not-found.component';
 import { ServicesComponent } from './screens/services/services.component';
 import { MenusComponent } from './screens/menus/menus.component';
 import { ContactComponent } from './screens/contact/contact.component';
+import { AdminComponent } from './screens/admin/admin.component';
 
 
 
@@ -15,5 +16,6 @@ export const routes: Routes = [
     { path: 'service', component: ServicesComponent, title:'Service', data: { name:"Service" } },
     { path: 'menu', component: MenusComponent, title:'Menu', data: { name:"Menu" } },
     { path: 'contact', component: ContactComponent,  title:'Contact', data: { name:"Contact us" } },
+    { path: 'admin', component: AdminComponent,  title:'Admin', data: { name:"Admin" } },
     { path: '**', component: NotFoundComponent }
   ];
